@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+INDEX
+{% endblock %}
+
+{% block body %}
+
+    <h1>Product detail</h1>
+    <hr>
+    <p class="text-right">
+        <a href="{{ path('product_update', {'id': product.id}) }}" class="btn btn-warning">Edit product</a>
+        <a href="{{ path('product_delete', {'id': product.id}) }}" class="btn btn-danger">Delete product</a>
+    </p>
+    <table class="table table-borderless">
+        <tbody>
+        <tr>
+            <th scope="row">#</th>
+            <td>{{product.id}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Designation</th>
+            <td>{{product.designation}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Reference</th>
+            <td>{{product.reference}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Brand</th>
+            <td>{{product.brand}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Price</th>
+            <td>{{product.price}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Stock</th>
+            <td>{{product.stock}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Active</th>
+            <td> 	
+            		{% if product.active %}
+                    <span class="badge badge-success">Yes</span>
+                    {% else %}
+                    <span class="badge badge-danger">No</span>
+                    {% endif %} 
+           	</td>
+        </tr>
+        <tr>
+            <th scope="row">Description</th>
+            <td>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a mi libero. Suspendisse sit amet placerat lectus. Mauris at dapibus odio, nec fringilla tortor. Sed sit amet velit massa. Donec pharetra neque id augue pretium tincidunt. Praesent sollicitudin bibendum dolor sit amet pulvinar. Suspendisse dignissim quis tellus sit amet scelerisque. Integer et purus in nisi lacinia ultricies.</p>
+                <p>Quisque et massa et nisl faucibus volutpat. Proin bibendum lectus non augue mattis, vitae cursus arcu condimentum. Vestibulum vehicula justo sit amet velit faucibus, sed rhoncus enim porta. Suspendisse at finibus sapien. Duis molestie, erat sed mattis ultricies, nisi purus efficitur ex, non hendrerit mauris metus non elit. Mauris risus mauris, fringilla id sem sed, mollis aliquam mauris. In vehicula arcu mattis fringilla pharetra. Quisque ut tortor nec odio interdum aliquet at eget odio.</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    {% endblock %}
